@@ -1,0 +1,94 @@
+Problem statement
+Develop an E-Commerce that enables individuals to browse available items, add or remove them from their shopping cart, and complete the purchasing process.
+
+
+
+Tasks :
+
+Create and initialize a new firestore for the BusyBuy app and include it inside the project.
+Create a register page that allows new users to register into your app.
+Create a login page that allows existing users to login into your app.
+Create a home page to display a list of products. The home page should include a feature to search products by name.
+Create a cart page to display the products that the user has added to the cart.
+Create a product card component that displays the image, title, price, and a button to add or remove that specific product from the cart. If the product is already in the cart, its quantity should be increased.
+The product card should only render the increase and decrease buttons if the product is on the cart page.
+Create an orders page to display the products the user has purchased and the order date.
+Create a sidebar to filter the products based on product price and categories on the HomePage. The search and filter should be applied to the products simultaneously.
+Add conditional rendering to show the absence of data and loading state using the react-spinners library.
+Show toast messages for async actions and error conditions using the react-toastify library.
+
+Hosted Link:
+Link
+
+
+Test Cases:
+
+
+HomePage:
+
+Before the user signs in, it should only display “signin” and home in the navbar with the class “navbar”.
+There should be a Form visible on the homepage.
+The input should have a placeholder with “Search By Name” and type “search”.
+App Routes:
+
+The routes should be /signup, /signin, /cart, /myorders in the application which should redirect to their corresponding pages.
+For any invalid URL, there should be a page with the text “Page Not Found”.
+Signup page:
+
+On the signup page, there should be three input fields with name as “name”, “email” and “password” and a button with “Sign Up” present.
+On completing the signup form, there should be a form validation to check the input passed by the user.
+The following condition should be checked for the form validation:
+The name should not be empty
+The email should not be empty
+The password should have a minimum of 6 characters.
+If any of the above conditions fail, it should display an error message using Toastify with the message “Please enter valid data!”
+For valid user input, it should add the user to the firebase and it should redirect the user to the home page with the URL “http://localhost:3000/”.
+Login:
+
+The login page should display 2 input fields for name and password with the name “email” and “password” and a button with text “Sign In”.
+If the user typed the correct input which is already present in the firebase database then, the user should be redirected to the home page with url “http://localhost:3000/”.
+In the sign-in page, there should be an option to redirect the user to the signup page if the user is new to the app.
+It should be within the p tag with the content “Or SignUp instead” and on clicking it it should redirect the user to “/signup” page.
+Filter Sidebar:
+
+There should be an aside section on the homepage that could be used to filter out the product.
+Initially, the value for the filter sidebar should be 75000.
+All the checkboxes should be unchecked initially.
+On clicking any of the checkboxes, it should be checked, and the output should change on the product list, similarly for unchecking the checkbox.
+Search Functionality:
+
+The search should have a placeholder “Search By Name”, and it should work for searching the product name using the title of different products available.
+If the product input by the user in the search form is not present, then it should not display any product with no error message on the screen or toastify.
+Add to Cart Functionality:
+
+On the home page, even before the user login the product should be visible to the user, but if they click on the Add to Cart button present on the product card, it should redirect it to “/signin” page and not the “/signup” page.
+Once the user has signed in by clicking the “Add to Cart” it should add the item to the cart, and it should display the message using Toastify “Product Added Successfully”.
+On clicking “Add to Cart” for the same item, it should increase the count of that item instead of adding the same product to the cart.
+Once an item is added to the product cart, it should display on the cart page “/cart” it should display the product in the cart section. It should contain the button to remove the item with the content “Remove From Cart” and also the option to change the item quantity.
+The cart page should contain the total price by adding all the prices of the product that are present in the cart.
+The cart should also have a button with the Text “Purchase”, and it should navigate to the “/myorders” page.
+Order Page Test:
+
+If there are any orders placed by the user, it should print the order summary on the order page otherwise, if no orders are placed, it should not show any orders and display a text message “No orders Found”.
+
+Note:
+Make sure to register one account for our testing purpose as well before you submit:
+Enter Name: Coding Ninja
+Enter Email: codingninjas@codingninjas.com
+Enter Password: codingninjas
+The initial price state in the slider filter should be 75000, as the minimum and maximum should be 1 and 100000.
+Make sure when you connect with Firebase and start your react app, it automatically posts the provided data in the data.js file under utils.
+We have to use react-router-dom to navigate through Home, My Orders, Cart, Signin. the My Orders and Cart should be protected shouldn't be shown unless the user is logged in.
+the ending name of routes should be as follows:
+"/" which is the index element, should render the HomePage component, which should have all the products, search bar, and the filter.
+checkboxes for categories and a slider, as mentioned above:
+"/signup" should render the RegisterPage component.
+"/signin" should render the LoginPage component.
+"/cart" should render the CartPage component.
+"/myorders" should render the OrdersPage component.
+"*" should be for NotFoundPage component and should contain Page not Found in words
+the addtocard button should have a title "Add to Cart" and removefromcart button which occurs when the product is in the cart should have the title="Remove from Cart".
+When you enter the wrong input in signin and signup details, it should show “Please enter valid data” in the toastify.
+when you add to the cart it should show “Product added successfully!” in toastify
+When the product is already added, and you add it again from the home page, it should show “Product added successfully!” in toastify
+For authentication using Firebase refer to this documnet : Link
