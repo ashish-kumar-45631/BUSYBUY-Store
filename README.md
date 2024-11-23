@@ -49,6 +49,9 @@ BusyBuy is an E-Commerce application developed using **React.js** and **Firebase
   - Pages like "My Orders" and "Cart" are accessible only to logged-in users.
   - Invalid URLs lead to a "Page Not Found" message.
 
+### Redux
+- **Used Redux for reducing access time and complexity**
+
 ## Test Cases
 
 - **Home Page:** 
